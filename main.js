@@ -12,11 +12,13 @@ const clubInput = document.querySelector(".clubInput")
 const defendingInput = document.querySelector(".defendingInput")
 const physicalInput = document.querySelector(".physicalInput")
 const playersBox = document.querySelector(".playersBox")
-const boxs = document.getElementsByClassName("box")
+const boxs = document.querySelectorAll(".box")
 
 const sugg = document.querySelector(".sugg")
 
-const attr = boxs.getAttribute("pos_player")
+ 
+
+
 const arr = []
  
 if (arr.length == 0) {
@@ -26,8 +28,7 @@ if (arr.length == 0) {
                             <div class="flex">           
                                 <div class="flex justify-center items-center">
                                    <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
-                                   <i class="absolute fa-solid fa-plus" style="font-size: 6rem; color: #29a682bf;"></i>
-                                </div>
+                                 </div>
                             </div>
                         </div>
                         <div class="rounded-[60%] positionCss">ST</div>`
@@ -50,12 +51,78 @@ butnSubmit.addEventListener("click",(e) => {
         paceInput: paceInput.value,
         passingInput: passingInput.value       
      })
-    console.log(arr)
-    handlePlayerBox()
+     handlePlayerBox()
     }
 ) 
 
 function handlePlayerBox(){
+    console.log(Array.from(boxs).length)
+    console.log(boxs)
+    for (let i = 0; i < Array.from(boxs).length; i++) {
+        boxs.forEach((box) => {
+            const posPlayer = box.getAttribute("pos_player");
+            if (posPlayer === "GK") {
+                box.innerHTML = `
+                  <img class="boxImgq h-[315px]" src="./src/assets/img/badge_gold.webp" alt="">
+                  <div class="absolute top-0 boxStats">
+                    <div class="flex">
+                      <div class="flex flex-col font-bold justify-center items-center">
+                        <span>81</span>
+                        <span class="font-medium">wd</span>
+                        <img class="w-[30px]" src="https://cdn.sofifa.net/flags/br.png" alt="">
+                        <img class="w-[30px]" src="https://cdn.sofifa.net/meta/team/3468/120.png" alt="">
+                      </div>
+                      <div>
+                        <img class="w-[76px]" src="https://cdn.sofifa.net/players/238/794/25_120.png" alt="">
+                      </div>
+                    </div>
+                    <div class="flex flex-col justify-center items-center w-full">
+                      <h4 class="font-bold">wd</h4>
+                      <div class="flex w-full flex justify-around">
+                        <div class="flex flex-col">
+                          <div class="flex spanBox">
+                            <span>wdd</span>
+                            <span>PAC</span>
+                          </div>
+                          <div class="flex spanBox">
+                            <span>wdwd</span>
+                            <span>PAC</span>
+                          </div>
+                          <div class="flex spanBox">
+                            <span>wdd</span>
+                            <span>PAC</span>
+                          </div>
+                          <div class="flex spanBox">
+                            <span>wdd</span>
+                            <span>PAC</span>
+                          </div>
+                        </div>
+                        <div class="flex flex-col">
+                          <div class="flex spanBox">
+                            <span>ddd</span>
+                            <span>PAC</span>
+                          </div>
+                          <div class="flex spanBox">
+                            <span>dd </span>
+                            <span>PAC</span>
+                          </div>
+                          <div class="flex spanBox">
+                            <span>wdd</span>
+                            <span>PAC</span>
+                          </div>
+                          <div class="flex spanBox">
+                            <span>wdd</span>
+                            <span>PAC</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                `;
+        }
+    }
+        )
+     }
     playersBox.innerHTML = ""
 arr.map((item) => {
   return  playersBox.innerHTML += `<div class="box">
