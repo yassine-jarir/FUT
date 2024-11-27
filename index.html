@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uteame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body class="imgMain flex justify-center items-center ">
+    <div class="overlay"></div>
+
+    <div style="background: rgb(39 44 48 / 91%); box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 16px;" class="p-[2rem] flex h-     [700px] w-[95vw] flex m-auto  gap-6 justify-center items-center rounded-[13px] border-2 border-[#29a682] flex-col my-[6rem]">
+    
+        <div class="flex gap-[4rem]">
+
+ 
+        <form class="max-w-md mx-auto flex flex-col justify-center items-center ">          
+            <!-- Name -->
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="name" class="nameInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer"placeholder=""    required />
+                <label for="name" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
+           
+            </div>
+        
+            <!-- Position -->
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="position" class="positionInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder=""  required />
+                <label for="position" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Position</label>
+            </div>
+        
+            <!-- Nationality -->
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="nationality" class="nationalInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder=""   required />
+                <label for="nationality" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nationality</label>
+            </div>
+        
+            <!-- image  -->
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="url" name="image" class="imageInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                <label for="image" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">image</label>
+            </div>
+        
+            <!-- Stats Section -->
+            <div class="grid md:grid-cols-2 md:gap-6">
+                <!-- Pace and Shooting -->
+ 
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="PaceInput" class="PaceInputs block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <label for="PaceInput" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">PaceInput</label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="shooting" class="shootingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <label for="shooting" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Shooting</label>
+                </div>
+            </div>
+        
+            <div class="grid md:grid-cols-2 md:gap-6">
+                <!-- Passing -->
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="passing" class="passingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <label for="passing" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Passing</label>
+                </div>
+                <!-- Dribbling -->
+
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="dribbling" class="dribblingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <label for="dribbling" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dribbling</label>
+                </div>
+                
+                <!-- Club -->
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="club" class="clubInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <label for="club" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Club</label>
+                </div>
+
+                <!-- defending -->
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="defending" class="defendingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <label for="defending" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">defending</label>
+                </div>
+
+                
+                <!-- physical -->
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="physical" class="physicalInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <label for="physical" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">physical</label>
+                </div>
+
+                <!-- pace -->
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="pace" class="paceInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <label for="pace" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">pace</label>
+                </div>
+            </div>
+        
+            <!-- Submit Button -->
+            <button type="button" class="SubmitBtn mt-[2rem] w-[200px] h-[43px] text-white bg-[#29a682] hover:bg-[#2af7b9] focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save & Share </button>
+        </form>
+    
+ 
+        <div class="relative w-[75vw] height: 880px; flex justify-center">
+            <img class="height: 980px; w-full h-[98%] rounded-[13px] border-2 border-[#29a682]" src="./src/assets/img/stadium_background.webp"/>
+            <div class="absolute top-0 flex justify-center items-center flex-col w-[90%] ">
+                <div class="flex gap-[2rem]">
+
+                    <div class="box" pos_player="ST">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                        </div>
+                        <div class="rounded-[60%] positionCss">ST</div>
+                    </div>
+                    
+                    <div class="box"  pos_player="ST">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">ST</div>
+                    </div>
+                </div>
+                
+                
+                <div class="flex justify-between w-[100%]">
+                    <div class="box"  pos_player="LM">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">LM</div>
+                    </div>
+
+                    <div class="box"  pos_player="CM">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">CM</div>
+                    </div>
+
+                    <div class="box" pos_player="CM">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">CM</div>
+                    </div>
+
+                    <div class="box"  pos_player="RM">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">RM</div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between w-[100%]">
+                    <div class="box  " pos_player="LB">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">LB</div>
+                    </div>
+                    <div class="box  " pos_player="RM">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">CB</div>
+                    </div>
+                    <div class="box  " pos_player="RM">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">CB</div>
+                    </div>
+                    <div class="box  " pos_player="RM">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">RB</div>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="box  " pos_player="GK">
+                        <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
+                        <div class="absolute top-0 boxStats">
+                            <div class="flex">
+                            
+                                <div class="flex justify-center items-center">
+                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                 </div>
+                            </div>
+
+                             
+                        </div>
+                        <div class="rounded-[60%] positionCss">GK</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+ 
+        <div class="players">
+            <!-- Title -->
+            <h2 class="text-center text-white text-2xl font-semibold mb-4">Players</h2>
+        
+            <div class="flex justify-center items-center text-white text-xl font-medium space-x-4 h-full" >
+                <!-- Font Awesome Icon -->
+                <!-- <i class="fas fa-user-slash text-4xl"></i> -->
+        
+                <!-- Text -->
+                <!-- <span class="text-2xl">Aucun joueurs</span> -->
+
+                <ul class="playersBox flex justify-start w-[100%]">
+                        
+                </ul>
+            </div>
+           
+        </div>
+     </div>
+      
+     <script src="./main.js"></script>
+</body>
+</html>

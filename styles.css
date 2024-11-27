@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.imgMain{
+    background-image: url("./src/assets/img/bgMain.jpg");
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+    
+    width: 100%;  
+    /* height: 500px;   */
+     position: relative;
+    min-height: 100vh;
+
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #0000007a;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+}
+.box{
+    width: 165px;
+    position: relative;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    
+}
+.box .boxImg{
+    min-width: 163px;
+    min-height: 230px;
+}
+.box:hover{
+    box-shadow: inset rgb(41 166 130) -20px -20px 20px 20px;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.players{
+    width: 100%;
+    min-height: 300px;
+    padding: 2rem;
+    border: 2px solid #29a682;
+    border-radius: 11px;
+}
+.playersBox{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.boxStats{
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 2px;
+    left: 0;
+    bottom: 0;
+}
+.spanBox{
+    gap: 5px;
+    font-weight: 600;
+    color: #372602;
+}
+.positionCss{
+    width: 70px;
+    height: 34px;
+    position: absolute;
+    bottom: 7px;
+    background-color: #333333;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    color: white;
+}

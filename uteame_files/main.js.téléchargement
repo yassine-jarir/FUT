@@ -1,0 +1,17 @@
+const butnSubmit = document.querySelector(".SubmitBtn")
+const box = document.querySelector(".box")
+const nameInput = document.querySelector(".nameInput")
+
+const arr = []
+
+butnSubmit.addEventListener("click",() => {
+    console.log(nameInput.value)
+    
+arr.push({
+    test1 : "df",
+    test2 : "test233"
+})
+console.log(arr)
+}
+) 
+
