@@ -24,6 +24,23 @@
     height: 100%;
     z-index: -1;
 }
+.suggBox{
+    width: 240px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.suggBox .boxImg{
+    min-width: 220px;
+    min-height: 324px;
+}
+.suggBox:hover{
+    box-shadow: inset rgb(41 166 130) -20px -20px 20px 20px;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
 .box{
     width: 165px;
     position: relative;
@@ -32,8 +49,21 @@
         align-items: center;
     
 }
+.box:hover .btnCss{
+    display: block;
+        z-index: 11;
+        position: absolute;
+        top: 25px;
+        height: 35px;
+         width: 121%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 15px;
+        padding: 15px;
+}
 .box .boxImg{
-    min-width: 163px;
+    min-width: 182px;
     min-height: 230px;
 }
 .box:hover{
@@ -49,13 +79,15 @@
     padding: 2rem;
     border: 2px solid #29a682;
     border-radius: 11px;
+    
 }
 .playersBox{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    gap: 5rem;
 }
 .boxStats{
     font-size: 12px;
@@ -84,4 +116,14 @@
     align-items: center;
     font-weight: 800;
     color: white;
+}
+
+.btnU{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: red;
 }
