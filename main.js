@@ -1,3 +1,5 @@
+let playerAtrr = []
+
 const butnSubmit = document.querySelector(".SubmitBtn")
   const singleBox = document.querySelector(".box")
 const nameInput = document.querySelector(".nameInput")
@@ -20,9 +22,15 @@ console.log(positionInput.value)
 
 const arr = []
  const suggArr = []
-    
+
+ 
 butnSubmit.addEventListener("click",(e) => {
     e.preventDefault() 
+
+    if(butnSubmit.textContent == "modifier le joueur"){
+        updatePlayer()
+        return
+    }
 
     const playerExists = arr.some((existingPlayer) =>  existingPlayer.nameInput == nameInput.value );
     const existingPlayer = arr.find((player) => 
@@ -47,9 +55,6 @@ const boxCheck = document.querySelector(`.${positionInput.value}`);
 
 console.log("boxCheck", boxCheck);
 
-function handleUpdate(){
-   
-}
 
 const gktest = Array.from(boxs).filter((item,i) => {
     if (item.classList.contains(positionInput.value)) {
@@ -57,7 +62,6 @@ const gktest = Array.from(boxs).filter((item,i) => {
         console.log("pos",positionInput.value)
         const test = item.querySelector('.test');
         console.log("testt",test)
-        // Check if test element exists
         if (test.textContent == "") {
             arr.push({
                 nameInput :nameInput.value ,
@@ -75,8 +79,8 @@ const gktest = Array.from(boxs).filter((item,i) => {
              })
              boxCheck.innerHTML = ` <div class="suggBox  " player-id="${i}">
              <div class="btnCss hidden">
-                    <button class="updatePlayer btnU"><i class="fa-solid fa-pen"></i></button>
-                    <button class="deletePlayer btnU"><i class="fa-solid fa-trash"></i></button>
+                    <i player-id="${nameInput.value}" class="updatePlayer btnU fa-solid fa-pen"></i> 
+                    <i player-id="${i} class="deletePlayer btnU fa-solid fa-trash"></i> 
                         </div>
                         <img class="boxImg" src="./src/assets/img/badge_gold.webp" alt="">
                         <div class="absolute top-0 boxStats">
@@ -251,19 +255,97 @@ const gktest = Array.from(boxs).filter((item,i) => {
     
      console.log(arr)
     }
+   
+
 ) 
+ 
 
-// 1 check the player card 
-// 2 check the player changement 
-// 3 add the player 
+// update
+let playerCard = document.querySelector(".playerCard")
 
- // Event delegation for update button clicks
- singleBox.addEventListener("click", (e) => {
-    if (e.target && e.target.matches('.updatePlayer')) {
-        const playerElement = e.target.closest('.suggBox');
-        const playerId = playerElement.getAttribute('player-id'); // Add unique identifier to the player element
-        const player = arr.find(p => p.nameInput === playerId); // Find the player object from the array
-        // handleUpdate(player, playerElement); // Call handleUpdate with player data and box element
-    }
-    console.log(playerId)
-});
+console.log(playerAtrr)
+playerCard.addEventListener("click",(e) => {
+
+let nameInput = document.querySelector('.nameInput');
+let positionInput = document.querySelector('.positionInput');
+let nationalityInput = document.querySelector('.nationalInput');
+let imageInput = document.querySelector('.imageInput');
+let paceInput = document.querySelector('.PaceInputs');
+let shootingInput = document.querySelector('.shootingInput');
+let passingInput = document.querySelector('.passingInput');
+let dribblingInput = document.querySelector('.dribblingInput');
+let clubInput = document.querySelector('.clubInput');
+let defendingInput = document.querySelector('.defendingInput');
+let physicalInput = document.querySelector('.physicalInput');
+let paceInputField = document.querySelector('.paceInput');
+
+
+ playerAtrr = e.target.getAttribute('player-id');
+console.log("playerAtrr",playerAtrr)
+ 
+ 
+
+    const playerObj =  arr.filter((player) => player.nameInput == playerAtrr)
+ console.log(playerObj.length)
+    if (playerObj.length > 0) {  
+        const player = playerObj[0];  
+        console.log("update click player", player)
+
+        nameInput.value = player.nameInput
+        positionInput.value = player.positionInput;
+        nationalityInput.value = player.nationalInput;
+        // imageInput.value = player.ima;
+        paceInput.value = player.paceInput;
+        shootingInput.value = player.shootingInput;
+        passingInput.value = player.passingInput;
+        dribblingInput.value = player.dribblingInput;
+        clubInput.value = player.clubInput;
+        defendingInput.value = player.defendingInput;
+        physicalInput.value = player.physicalInput;
+
+         console.log("player is update", playerObj)
+
+        //  SubmitBtn.style
+        butnSubmit.textContent = "modifier le joueur"
+
+  }else{
+    console.log("update err")
+  }
+
+
+ }
+        
+
+)
+ 
+
+
+function updatePlayer(){
+    if (playerAtrr.length > 0) {  
+        const playerObj =  arr.filter((player) => player.nameInput == playerAtrr)
+
+        const player = playerObj[0];  
+        console.log("update click player", player)
+
+        player.nameInput = nameInput.value = 
+        // positionInput.value = player.positionInput;
+        // nationalityInput.value = player.nationalInput;
+        // // imageInput.value = player.ima;
+        // paceInput.value = player.paceInput;
+        // shootingInput.value = player.shootingInput;
+        // passingInput.value = player.passingInput;
+        // dribblingInput.value = player.dribblingInput;
+        // clubInput.value = player.clubInput;
+        // defendingInput.value = player.defendingInput;
+        // physicalInput.value = player.physicalInput;
+
+        //  console.log("player is update", playerObj)
+
+        //  SubmitBtn.style
+        butnSubmit.textContent = "add le joueur"
+
+  }else{
+    console.log("update err")
+  }
+
+}
