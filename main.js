@@ -1,10 +1,10 @@
 let playerAtrr = []
 
 const butnSubmit = document.querySelector(".SubmitBtn")
-  const singleBox = document.querySelector(".box")
+const singleBox = document.querySelector(".box")
 const nameInput = document.querySelector(".nameInput")
 const positionInput = document.querySelector(".positionInput")
- const nationalInput = document.querySelector(".nationalInput")
+const nationalInput = document.querySelector(".nationalInput")
 const imageInput = document.querySelector(".imageInput")
 const paceInput = document.querySelector(".PaceInputs")
 const shootingInput = document.querySelector(".shootingInput")
@@ -18,7 +18,7 @@ const boxs = document.querySelectorAll(".box")
  const sugg = document.querySelector(".sugg")
 
  
-const arr = []
+const arr =  []
  const suggArr = []
 
 //  add
@@ -50,7 +50,7 @@ const arr = []
                     <div class="box" player-id="${i}">
                         <div class="btnCss hidden">
                             <i player-id="${nameInput.value}" class="updatePlayer btnU fa-solid fa-pen"></i>
-                            <i player-id="${i}" class="deletePlayer btnU fa-solid fa-trash"></i>
+                            <i player-id="${nameInput.value}" class="deletePlayer btnU fa-solid fa-trash"></i>
                         </div>
                         <img class="boxImg" src="./src/assets/img/badge_gold.webp" alt="">
                         <div class="absolute top-0 boxStats">
@@ -129,14 +129,13 @@ const arr = []
                 });
 
                 playersBox.innerHTML += `
-                    <div class="suggBox">
-                        <div>
-                            <button class="updatePlayer"><i class="fa-solid fa-pen"></i></button>
-                            <button class="deletePlayer"><i class="fa-solid fa-trash"></i></button>
+                    <div class="suggBox ">
+                        <div class="btnCss hidden">
+                            <button player-id="${nameInput.value}" class="updatePlayer"><i class="fa-solid fa-pen"></i></button>
+                            <button player-id="${nameInput.value}" class="deletePlayer"><i class="fa-solid fa-trash"></i></button>
                         </div>
                         <img class="boxImg" src="./src/assets/img/badge_gold.webp" alt="">
-                        <i class="updateBtn fa-solid fa-pencil"></i>
-                        <i class="trash fa-solid fa-trash"></i>
+               
                         <div class="absolute top-0 boxStats">
                             <div class="flex">
                                 <div class="flex flex-col font-bold justify-center items-center">
@@ -191,7 +190,7 @@ const arr = []
                                 </div>
                             </div>
                         </div>
-                        <div class="rounded-[60%] positionCss">GK</div>
+                        <div class="rounded-[60%] positionCss">${positionInput.value}</div>
                     </div>
                 `;
             }
@@ -218,7 +217,7 @@ butnSubmit.addEventListener("click", (e) => {
                         <div class="box" player-id="${i}">
                             <div class="btnCss hidden">
                                 <i player-id="${nameInput.value}" class="updatePlayer btnU fa-solid fa-pen"></i>
-                                <i player-id="${i}" class="deletePlayer btnU fa-solid fa-trash"></i>
+                                <i player-id="${nameInput.value}"  class="deletePlayer btnU fa-solid fa-trash"></i>
                             </div>
                             <img class="boxImg" src="./src/assets/img/badge_gold.webp" alt="">
                             <div class="absolute top-0 boxStats">
@@ -299,6 +298,7 @@ butnSubmit.addEventListener("click", (e) => {
     if (!playerExists) {
         const positionValue = positionInput.value;
         addPlayer(positionValue); 
+        console.log("player arr",arr)
         return;
     } else if (existingPlayer.game == "basic") {
         existingPlayer.game = "remplacement";
@@ -315,7 +315,10 @@ butnSubmit.addEventListener("click", (e) => {
 let playerCard = document.querySelector(".playerCard")
 console.log(playerAtrr)
 
+
 playerCard.addEventListener("click",(e) => {
+ console.log(e.target)
+ if (e.target.classList.contains("updatePlayer")) {
 
 let nameInput = document.querySelector('.nameInput');
 let positionInput = document.querySelector('.positionInput');
@@ -337,7 +340,7 @@ console.log("playerAtrr",playerAtrr)
  
 
     const playerObj =  arr.filter((player) => player.nameInput == playerAtrr)
- console.log(playerObj.length)
+        console.log(playerObj.length)
     if (playerObj.length > 0) {  
         const player = playerObj[0];  
         console.log("update click player", player)
@@ -362,15 +365,66 @@ console.log("playerAtrr",playerAtrr)
   }else{
     console.log("update err")
   }
+}
+// delete
+else if(e.target.classList.contains("deletePlayer")){
+             const playerId = e.target.getAttribute("player-id");
+             console.log(playerId)
+       
+            for (let i = 0; i < arr.length; i++) {
+                if(arr[i].nameInput == playerId){
+                console.log(arr[i])
+               const playerPos = arr[i].positionInput
+                arr.splice(i,1)
 
+                const playerBox = e.target.closest(".box");
+                playerBox.textContent = ""
+                     const boxImg = document.createElement("img");
+                    boxImg.classList.add("boxImg");
+                    boxImg.src = "./src/assets/img/badge_gold.webp";
+                    boxImg.alt = "";
 
- }
+                    const boxStats = document.createElement("div");
+                    boxStats.classList.add("absolute", "top-0", "boxStats");
+
+                    const flexDiv = document.createElement("div");
+                    flexDiv.classList.add("flex");
+
+                    const testSpan = document.createElement("span");
+                    testSpan.classList.add("test");
+                     testSpan.textContent = "";  
+
+                    const flexCenterDiv = document.createElement("div");
+                    flexCenterDiv.classList.add("flex", "justify-center", "items-center");
+
+                    const imgElement = document.createElement("img");
+                    imgElement.classList.add("w-[135px]");
+                    imgElement.src = "./src/assets/img/unknown.png";
+                    imgElement.alt = "";
+
+                     flexDiv.appendChild(testSpan);
+                    flexCenterDiv.appendChild(imgElement);
+                    boxStats.appendChild(flexDiv);
+                    boxStats.appendChild(flexCenterDiv);
+
+                     const positionLabel = document.createElement("div");
+                    positionLabel.classList.add("rounded-[60%]", "positionCss");
+                    positionLabel.textContent = playerPos;  
+
+                     playerBox.appendChild(boxImg);
+                    playerBox.appendChild(boxStats);
+                    playerBox.appendChild(positionLabel);
+
+  
+            }
+        }
         
-
+        console.log("player delted",arr)
+ 
+ }
+ }
 )
  
-
-
 function updatePlayer(){
     if (playerAtrr.length > 0) {  
         const playerObj =  arr.filter((player) => player.nameInput == playerAtrr)
@@ -398,3 +452,5 @@ function updatePlayer(){
   }
 
 }
+
+ 

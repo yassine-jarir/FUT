@@ -26,7 +26,19 @@
         
             <!-- Position -->
             <div class="relative z-0 w-full mb-5 group">
-                <input type="text" name="position" class="positionInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder=""  required />
+                <select name="position" class="positionInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer mt-[10px]" style="background-color: #242a2e;" required>
+                    <option value="GK">GK</option>
+                    <option value="ST1">ST1</option>
+                    <option value="ST2">ST2</option>
+                    <option value="CM1">CM1</option>
+                    <option value="CM2">CM2</option>
+                    <option value="LM">LM</option>
+                    <option value="RM">RM</option>
+                    <option value="LB">LB</option>
+                    <option value="RB">RB</option>
+                    <option value="CB2">CB2</option>
+                    <option value="CB1">CB1</option>
+                </select>
                 <label for="position" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Position</label>
             </div>
         
@@ -47,11 +59,11 @@
                 <!-- Pace and Shooting -->
  
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="PaceInput" class="PaceInputs block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <input type="number" name="PaceInput" class="PaceInputs block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
                     <label for="PaceInput" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">PaceInput</label>
                 </div>
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="shooting" class="shootingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <input type="number" name="shooting" class="shootingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
                     <label for="shooting" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Shooting</label>
                 </div>
             </div>
@@ -59,38 +71,38 @@
             <div class="grid md:grid-cols-2 md:gap-6">
                 <!-- Passing -->
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="passing" class="passingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <input type="number" name="passing" class="passingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
                     <label for="passing" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Passing</label>
                 </div>
                 <!-- Dribbling -->
 
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="dribbling" class="dribblingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <input type="number" name="dribbling" class="dribblingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
                     <label for="dribbling" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dribbling</label>
                 </div>
                 
                 <!-- Club -->
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="club" class="clubInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <input type="number" name="club" class="clubInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
                     <label for="club" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Club</label>
                 </div>
 
                 <!-- defending -->
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="defending" class="defendingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <input type="number" name="defending" class="defendingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
                     <label for="defending" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">defending</label>
                 </div>
 
                 
                 <!-- physical -->
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="physical" class="physicalInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <input type="number" name="physical" class="physicalInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
                     <label for="physical" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">physical</label>
                 </div>
 
                 <!-- pace -->
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="pace" class="paceInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required />
+                    <input type="number" name="pace" class="paceInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
                     <label for="pace" class="peer-focus:font-medium absolute text-[1rem] text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#29a682] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">pace</label>
                 </div>
             </div>
@@ -227,7 +239,7 @@
                         </div>
                         <div class="rounded-[60%] positionCss">LB</div>
                     </div>
-                    <div class="box  RM1" pos_player="RM1">
+                    <div class="box  CB1" pos_player="CB1">
                         <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
                         <div class="absolute top-0 boxStats">
                             <div class="flex">
@@ -243,7 +255,7 @@
                         </div>
                         <div class="rounded-[60%] positionCss">CB</div>
                     </div>
-                    <div class="box  RM2" pos_player="RM2">
+                    <div class="box  CB2" pos_player="CB2">
                         <img class="boxImg " src="./src/assets/img/badge_gold.webp" alt="" >
                         <div class="absolute top-0 boxStats">
                             <div class="flex">
@@ -308,13 +320,9 @@
                 flex-wrap: wrap;
                 justify-content: start;
                 align-items: center;">
-                <!-- Font Awesome Icon -->
-                <!-- <i class="fas fa-user-slash text-4xl"></i> -->
-        
-                <!-- Text -->
-                <!-- <span class="text-2xl">Aucun joueurs</span> -->
+ 
 
-                <ul class="playersBox  flex justify-start w-[100%]">
+                <ul class="playersBox  flex justify-center w-[100%]">
 
                 
                 </ul>
