@@ -310,7 +310,7 @@ butnSubmit.addEventListener("click", (e) => {
 });
 
  
-// update
+// update and delete
 let playerCard = document.querySelector(".playerCard")
 console.log(playerAtrr)
 
