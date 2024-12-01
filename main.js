@@ -15,12 +15,11 @@ const defendingInput = document.querySelector(".defendingInput")
 const physicalInput = document.querySelector(".physicalInput")
 const playersBox = document.querySelector(".playersBox")
 const boxs = document.querySelectorAll(".box")
- const sugg = document.querySelector(".sugg")
+const sugg = document.querySelector(".sugg")
 
  
 const arr =  []
- const suggArr = []
-
+ 
 //  add
  function addPlayer(positionValue) {
     const boxCheck = document.querySelector(`.${positionValue}`);
