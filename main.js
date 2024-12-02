@@ -44,75 +44,189 @@ const arr =  []
                     passingInput: passingInput.value,
                     game: "bsasic"
                 });
+                boxCheck.textContent = ""
+                const box = document.createElement('div');
+                box.classList.add('box');
+                box.setAttribute('player-id', i);
+                
+                const btnCss = document.createElement('div');
+                btnCss.classList.add('btnCss', 'hidden');
+                
+                const updateBtn = document.createElement('i');
+                updateBtn.classList.add('updatePlayer', 'btnU', 'fa-solid', 'fa-pen');
+                updateBtn.setAttribute('player-id', nameInput.value);
+                
+                const deleteBtn = document.createElement('i');
+                deleteBtn.classList.add('deletePlayer', 'btnU', 'fa-solid', 'fa-trash');
+                deleteBtn.setAttribute('player-id', nameInput.value);
+                
+                btnCss.appendChild(updateBtn);
+                btnCss.appendChild(deleteBtn);
+                
+                const boxImg = document.createElement('img');
+                boxImg.classList.add('boxImg');
+                boxImg.src = './src/assets/img/badge_gold.webp';
+                boxImg.alt = '';
+                
+                const boxStats = document.createElement('div');
+                boxStats.classList.add('absolute', 'top-0', 'boxStats');
+                
+                const flex1 = document.createElement('div');
+                flex1.classList.add('flex');
+                
+                const flexColumn = document.createElement('div');
+                flexColumn.classList.add('flex', 'flex-col', 'font-bold', 'justify-center', 'items-center');
+                
+                const positionText = document.createElement('span');
+                const positionSpan = document.createElement('span');
+                positionSpan.classList.add('font-medium');
+                positionSpan.textContent = positionValue;
+                
+                const flagImg = document.createElement('img');
+                flagImg.classList.add('w-[30px]');
+                flagImg.src = 'https://cdn.sofifa.net/flags/br.png';
+                flagImg.alt = '';
+                
+                const teamImg = document.createElement('img');
+                teamImg.classList.add('w-[30px]');
+                teamImg.src = 'https://cdn.sofifa.net/meta/team/3468/120.png';
+                teamImg.alt = '';
+                
+                flexColumn.appendChild(positionText);
+                flexColumn.appendChild(positionSpan);
+                flexColumn.appendChild(flagImg);
+                flexColumn.appendChild(teamImg);
+                
+                const playerImg = document.createElement('img');
+                playerImg.classList.add('w-[76px]');
+                playerImg.src = 'https://cdn.sofifa.net/players/238/794/25_120.png';
+                playerImg.alt = '';
+                
+                flex1.appendChild(flexColumn);
+                flex1.appendChild(playerImg);
+                
+                const flex2 = document.createElement('div');
+                flex2.classList.add('flex', 'flex-col', 'justify-center', 'items-center', 'w-full');
+                
+                const playerName = document.createElement('h4');
+                playerName.classList.add('font-bold');
+                playerName.textContent = nameInput.value;
+                
+                const statContainer = document.createElement('div');
+                statContainer.classList.add('flex', 'w-full', 'flex', 'justify-around');
+                
+                const statColumn1 = document.createElement('div');
+                statColumn1.classList.add('flex', 'flex-col');
+                
+                const statColumn2 = document.createElement('div');
+                statColumn2.classList.add('flex', 'flex-col');
+                
+                 const statBox1 = document.createElement('div');
+                statBox1.classList.add('flex', 'spanBox');
+                const statValue1 = document.createElement('span');
+                statValue1.textContent = paceInput.value;
+                statValue1.classList.add('test');
 
-                boxCheck.innerHTML = `
-                    <div class="box" player-id="${i}">
-                        <div class="btnCss hidden">
-                            <i player-id="${nameInput.value}" class="updatePlayer btnU fa-solid fa-pen"></i>
-                            <i player-id="${nameInput.value}" class="deletePlayer btnU fa-solid fa-trash"></i>
-                        </div>
-                        <img class="boxImg" src="./src/assets/img/badge_gold.webp" alt="">
-                        <div class="absolute top-0 boxStats">
-                            <div class="flex">
-                                <div class="flex flex-col font-bold justify-center items-center">
-                                    <span></span>
-                                    <span class="font-medium">${positionValue}</span>
-                                    <img class="w-[30px]" src="https://cdn.sofifa.net/flags/br.png" alt="">
-                                    <img class="w-[30px]" src="https://cdn.sofifa.net/meta/team/3468/120.png" alt="">
-                                </div>
-                                <div>
-                                    <img class="w-[76px]" src="https://cdn.sofifa.net/players/238/794/25_120.png" alt="">
-                                </div>
-                            </div>
-                            <div class="flex flex-col justify-center items-center w-full">
-                                <h4 class="font-bold">${nameInput.value}</h4>
-                                <div class="flex w-full flex justify-around">
-                                    <div class="flex flex-col">
-                                        <div class="flex spanBox">
-                                            <span class="test">${paceInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${shootingInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${passingInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${dribblingInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <div class="flex spanBox">
-                                            <span>${clubInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${defendingInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${physicalInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${paceInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rounded-[60%] positionCss">${positionInput.value}</div>
-                    </div>
-                `;
+                const statLabel1 = document.createElement('span');
+                statLabel1.textContent = 'PAC';
+                statBox1.appendChild(statValue1);
+                statBox1.appendChild(statLabel1);
+                
+                const statBox2 = document.createElement('div');
+                statBox2.classList.add('flex', 'spanBox');
+                const statValue2 = document.createElement('span');
+                statValue2.textContent = shootingInput.value;
+                const statLabel2 = document.createElement('span');
+                statLabel2.textContent = 'SHO';
+                statBox2.appendChild(statValue2);
+                statBox2.appendChild(statLabel2);
+                
+                const statBox3 = document.createElement('div');
+                statBox3.classList.add('flex', 'spanBox');
+                const statValue3 = document.createElement('span');
+                statValue3.textContent = passingInput.value;
+                const statLabel3 = document.createElement('span');
+                statLabel3.textContent = 'PAS';
+                statBox3.appendChild(statValue3);
+                statBox3.appendChild(statLabel3);
+                
+                const statBox4 = document.createElement('div');
+                statBox4.classList.add('flex', 'spanBox');
+                const statValue4 = document.createElement('span');
+                statValue4.textContent = dribblingInput.value;
+                const statLabel4 = document.createElement('span');
+                statLabel4.textContent = 'DRI';
+                statBox4.appendChild(statValue4);
+                statBox4.appendChild(statLabel4);
+                
+                const statBox5 = document.createElement('div');
+                statBox5.classList.add('flex', 'spanBox');
+                const statValue5 = document.createElement('span');
+                statValue5.textContent = clubInput.value;
+                const statLabel5 = document.createElement('span');
+                statLabel5.textContent = 'CLUB';
+                statBox5.appendChild(statValue5);
+                statBox5.appendChild(statLabel5);
+                
+                const statBox6 = document.createElement('div');
+                statBox6.classList.add('flex', 'spanBox');
+                const statValue6 = document.createElement('span');
+                statValue6.textContent = defendingInput.value;
+                const statLabel6 = document.createElement('span');
+                statLabel6.textContent = 'DEF';
+                statBox6.appendChild(statValue6);
+                statBox6.appendChild(statLabel6);
+                
+                const statBox7 = document.createElement('div');
+                statBox7.classList.add('flex', 'spanBox');
+                const statValue7 = document.createElement('span');
+                statValue7.textContent = physicalInput.value;
+                const statLabel7 = document.createElement('span');
+                statLabel7.textContent = 'PHY';
+                statBox7.appendChild(statValue7);
+                statBox7.appendChild(statLabel7);
+                
+                const statBox8 = document.createElement('div');
+                statBox8.classList.add('flex', 'spanBox');
+                const statValue8 = document.createElement('span');
+                statValue8.textContent = paceInput.value;
+                const statLabel8 = document.createElement('span');
+                statLabel8.textContent = 'PAC';
+                statBox8.appendChild(statValue8);
+                statBox8.appendChild(statLabel8);
+                
+                statColumn1.appendChild(statBox1);
+                statColumn1.appendChild(statBox2);
+                statColumn1.appendChild(statBox3);
+                statColumn1.appendChild(statBox4);
+                
+                statColumn2.appendChild(statBox5);
+                statColumn2.appendChild(statBox6);
+                statColumn2.appendChild(statBox7);
+                statColumn2.appendChild(statBox8);
+                
+                statContainer.appendChild(statColumn1);
+                statContainer.appendChild(statColumn2);
+                
+                flex2.appendChild(playerName);
+                flex2.appendChild(statContainer);
+                
+                boxStats.appendChild(flex1);
+                boxStats.appendChild(flex2);
+                
+                const position = document.createElement('div');
+                position.classList.add('rounded-[60%]', 'positionCss');
+                position.textContent = positionInput.value;
+                
+                box.appendChild(btnCss);
+                box.appendChild(boxImg);
+                box.appendChild(boxStats);
+                box.appendChild(position);
+                
+                boxCheck.appendChild(box)
                 return console.log("empty");
             } else {
-                // Add new player as replacement if box is occupied
-                arr.push({
+                 arr.push({
                     nameInput: nameInput.value,
                     positionInput: positionValue,
                     nationalInput: nationalInput.value,
@@ -126,72 +240,187 @@ const arr =  []
                     passingInput: passingInput.value,
                     game: "remplacement"
                 });
+                const remplcementBox = document.querySelector(".playersBox")
+                 const box = document.createElement('div');
+                box.classList.add('suggBox');
+                box.setAttribute('player-id', i);
+                
+                const btnCss = document.createElement('div');
+                btnCss.classList.add('btnCss', 'hidden');
+                
+                const updateBtn = document.createElement('i');
+                updateBtn.classList.add('updatePlayer', 'btnU', 'fa-solid', 'fa-pen');
+                updateBtn.setAttribute('player-id', nameInput.value);
+                
+                const deleteBtn = document.createElement('i');
+                deleteBtn.classList.add('deletePlayer', 'btnU', 'fa-solid', 'fa-trash');
+                deleteBtn.setAttribute('player-id', nameInput.value);
+                
+                btnCss.appendChild(updateBtn);
+                btnCss.appendChild(deleteBtn);
+                
+                const boxImg = document.createElement('img');
+                boxImg.classList.add('boxImg');
+                boxImg.src = './src/assets/img/badge_gold.webp';
+                boxImg.alt = '';
+                
+                const boxStats = document.createElement('div');
+                boxStats.classList.add('absolute', 'top-0', 'boxStats');
+                
+                const flex1 = document.createElement('div');
+                flex1.classList.add('flex');
+                
+                const flexColumn = document.createElement('div');
+                flexColumn.classList.add('flex', 'flex-col', 'font-bold', 'justify-center', 'items-center');
+                
+                const positionText = document.createElement('span');
+                const positionSpan = document.createElement('span');
+                positionSpan.classList.add('font-medium');
+                positionSpan.textContent = positionValue;
+                
+                const flagImg = document.createElement('img');
+                flagImg.classList.add('w-[30px]');
+                flagImg.src = 'https://cdn.sofifa.net/flags/br.png';
+                flagImg.alt = '';
+                
+                const teamImg = document.createElement('img');
+                teamImg.classList.add('w-[30px]');
+                teamImg.src = 'https://cdn.sofifa.net/meta/team/3468/120.png';
+                teamImg.alt = '';
+                
+                flexColumn.appendChild(positionText);
+                flexColumn.appendChild(positionSpan);
+                flexColumn.appendChild(flagImg);
+                flexColumn.appendChild(teamImg);
+                
+                const playerImg = document.createElement('img');
+                playerImg.classList.add('w-[76px]');
+                playerImg.src = 'https://cdn.sofifa.net/players/238/794/25_120.png';
+                playerImg.alt = '';
+                
+                flex1.appendChild(flexColumn);
+                flex1.appendChild(playerImg);
+                
+                const flex2 = document.createElement('div');
+                flex2.classList.add('flex', 'flex-col', 'justify-center', 'items-center', 'w-full');
+                
+                const playerName = document.createElement('h4');
+                playerName.classList.add('font-bold');
+                playerName.textContent = nameInput.value;
+                
+                const statContainer = document.createElement('div');
+                statContainer.classList.add('flex', 'w-full', 'flex', 'justify-around');
+                
+                const statColumn1 = document.createElement('div');
+                statColumn1.classList.add('flex', 'flex-col');
+                
+                const statColumn2 = document.createElement('div');
+                statColumn2.classList.add('flex', 'flex-col');
+                
+                 const statBox1 = document.createElement('div');
+                statBox1.classList.add('flex', 'spanBox');
+                const statValue1 = document.createElement('span');
+                statValue1.textContent = paceInput.value;
+                statValue1.classList.add('test');
 
-                playersBox.innerHTML += `
-                    <div class="suggBox ">
-                        <div class="btnCss hidden">
-                            <button player-id="${nameInput.value}" class="updatePlayer"><i class="fa-solid fa-pen"></i></button>
-                            <button player-id="${nameInput.value}" class="deletePlayer"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                        <img class="boxImg" src="./src/assets/img/badge_gold.webp" alt="">
-               
-                        <div class="absolute top-0 boxStats">
-                            <div class="flex">
-                                <div class="flex flex-col font-bold justify-center items-center">
-                                    <span></span>
-                                    <span class="font-medium">${positionValue}</span>
-                                    <img class="w-[30px]" src="https://cdn.sofifa.net/flags/br.png" alt="">
-                                    <img class="w-[30px]" src="https://cdn.sofifa.net/meta/team/3468/120.png" alt="">
-                                </div>
-                                <div>
-                                    <img class="w-[76px]" src="https://cdn.sofifa.net/players/238/794/25_120.png" alt="">
-                                </div>
-                            </div>
-                            <div class="flex flex-col justify-center items-center w-full">
-                                <h4 class="font-bold">${nameInput.value}</h4>
-                                <div class="flex w-full flex justify-around">
-                                    <div class="flex flex-col">
-                                        <div class="flex spanBox">
-                                            <span class="test">${paceInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${shootingInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${passingInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${dribblingInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <div class="flex spanBox">
-                                            <span>${clubInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${defendingInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${physicalInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                        <div class="flex spanBox">
-                                            <span>${paceInput.value}</span>
-                                            <span>PAC</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rounded-[60%] positionCss">${positionInput.value}</div>
-                    </div>
-                `;
+                const statLabel1 = document.createElement('span');
+                statLabel1.textContent = 'PAC';
+                statBox1.appendChild(statValue1);
+                statBox1.appendChild(statLabel1);
+                
+                const statBox2 = document.createElement('div');
+                statBox2.classList.add('flex', 'spanBox');
+                const statValue2 = document.createElement('span');
+                statValue2.textContent = shootingInput.value;
+                const statLabel2 = document.createElement('span');
+                statLabel2.textContent = 'SHO';
+                statBox2.appendChild(statValue2);
+                statBox2.appendChild(statLabel2);
+                
+                const statBox3 = document.createElement('div');
+                statBox3.classList.add('flex', 'spanBox');
+                const statValue3 = document.createElement('span');
+                statValue3.textContent = passingInput.value;
+                const statLabel3 = document.createElement('span');
+                statLabel3.textContent = 'PAS';
+                statBox3.appendChild(statValue3);
+                statBox3.appendChild(statLabel3);
+                
+                const statBox4 = document.createElement('div');
+                statBox4.classList.add('flex', 'spanBox');
+                const statValue4 = document.createElement('span');
+                statValue4.textContent = dribblingInput.value;
+                const statLabel4 = document.createElement('span');
+                statLabel4.textContent = 'DRI';
+                statBox4.appendChild(statValue4);
+                statBox4.appendChild(statLabel4);
+                
+                const statBox5 = document.createElement('div');
+                statBox5.classList.add('flex', 'spanBox');
+                const statValue5 = document.createElement('span');
+                statValue5.textContent = clubInput.value;
+                const statLabel5 = document.createElement('span');
+                statLabel5.textContent = 'CLUB';
+                statBox5.appendChild(statValue5);
+                statBox5.appendChild(statLabel5);
+                
+                const statBox6 = document.createElement('div');
+                statBox6.classList.add('flex', 'spanBox');
+                const statValue6 = document.createElement('span');
+                statValue6.textContent = defendingInput.value;
+                const statLabel6 = document.createElement('span');
+                statLabel6.textContent = 'DEF';
+                statBox6.appendChild(statValue6);
+                statBox6.appendChild(statLabel6);
+                
+                const statBox7 = document.createElement('div');
+                statBox7.classList.add('flex', 'spanBox');
+                const statValue7 = document.createElement('span');
+                statValue7.textContent = physicalInput.value;
+                const statLabel7 = document.createElement('span');
+                statLabel7.textContent = 'PHY';
+                statBox7.appendChild(statValue7);
+                statBox7.appendChild(statLabel7);
+                
+                const statBox8 = document.createElement('div');
+                statBox8.classList.add('flex', 'spanBox');
+                const statValue8 = document.createElement('span');
+                statValue8.textContent = paceInput.value;
+                const statLabel8 = document.createElement('span');
+                statLabel8.textContent = 'PAC';
+                statBox8.appendChild(statValue8);
+                statBox8.appendChild(statLabel8);
+                
+                statColumn1.appendChild(statBox1);
+                statColumn1.appendChild(statBox2);
+                statColumn1.appendChild(statBox3);
+                statColumn1.appendChild(statBox4);
+                
+                statColumn2.appendChild(statBox5);
+                statColumn2.appendChild(statBox6);
+                statColumn2.appendChild(statBox7);
+                statColumn2.appendChild(statBox8);
+                
+                statContainer.appendChild(statColumn1);
+                statContainer.appendChild(statColumn2);
+                
+                flex2.appendChild(playerName);
+                flex2.appendChild(statContainer);
+                
+                boxStats.appendChild(flex1);
+                boxStats.appendChild(flex2);
+                
+                const position = document.createElement('div');
+                position.classList.add('rounded-[60%]', 'positionCss');
+                position.textContent = positionInput.value;
+                
+                box.appendChild(btnCss);
+                box.appendChild(boxImg);
+                box.appendChild(boxStats);
+                box.appendChild(position);
+                
+                remplcementBox.appendChild(box)
+             
             }
         }
     });
@@ -212,70 +441,186 @@ butnSubmit.addEventListener("click", (e) => {
              
                     
     
-                boxCheck.innerHTML = `
-                        <div class="box" player-id="${i}">
-                            <div class="btnCss hidden">
-                                <i player-id="${nameInput.value}" class="updatePlayer btnU fa-solid fa-pen"></i>
-                                <i player-id="${nameInput.value}"  class="deletePlayer btnU fa-solid fa-trash"></i>
-                            </div>
-                            <img class="boxImg" src="./src/assets/img/badge_gold.webp" alt="">
-                            <div class="absolute top-0 boxStats">
-                                <div class="flex">
-                                    <div class="flex flex-col font-bold justify-center items-center">
-                                        <span></span>
-                                        <span class="font-medium">${positionValue}</span>
-                                        <img class="w-[30px]" src="https://cdn.sofifa.net/flags/br.png" alt="">
-                                        <img class="w-[30px]" src="https://cdn.sofifa.net/meta/team/3468/120.png" alt="">
-                                    </div>
-                                    <div>
-                                        <img class="w-[76px]" src="https://cdn.sofifa.net/players/238/794/25_120.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="flex flex-col justify-center items-center w-full">
-                                    <h4 class="font-bold">${nameInput.value}</h4>
-                                    <div class="flex w-full flex justify-around">
-                                        <div class="flex flex-col">
-                                            <div class="flex spanBox">
-                                                <span class="test">${paceInput.value}</span>
-                                                <span>PAC</span>
-                                            </div>
-                                            <div class="flex spanBox">
-                                                <span>${shootingInput.value}</span>
-                                                <span>PAC</span>
-                                            </div>
-                                            <div class="flex spanBox">
-                                                <span>${passingInput.value}</span>
-                                                <span>PAC</span>
-                                            </div>
-                                            <div class="flex spanBox">
-                                                <span>${dribblingInput.value}</span>
-                                                <span>PAC</span>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <div class="flex spanBox">
-                                                <span>${clubInput.value}</span>
-                                                <span>PAC</span>
-                                            </div>
-                                            <div class="flex spanBox">
-                                                <span>${defendingInput.value}</span>
-                                                <span>PAC</span>
-                                            </div>
-                                            <div class="flex spanBox">
-                                                <span>${physicalInput.value}</span>
-                                                <span>PAC</span>
-                                            </div>
-                                            <div class="flex spanBox">
-                                                <span>${paceInput.value}</span>
-                                                <span>PAC</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="rounded-[60%] positionCss">GK</div>
-                        </div>
-                    `;
+                boxCheck.textContent = ""
+                const box = document.createElement('div');
+                box.classList.add('box');
+                box.setAttribute('player-id', i);
+                
+                const btnCss = document.createElement('div');
+                btnCss.classList.add('btnCss', 'hidden');
+                
+                const updateBtn = document.createElement('i');
+                updateBtn.classList.add('updatePlayer', 'btnU', 'fa-solid', 'fa-pen');
+                updateBtn.setAttribute('player-id', nameInput.value);
+                
+                const deleteBtn = document.createElement('i');
+                deleteBtn.classList.add('deletePlayer', 'btnU', 'fa-solid', 'fa-trash');
+                deleteBtn.setAttribute('player-id', nameInput.value);
+                
+                btnCss.appendChild(updateBtn);
+                btnCss.appendChild(deleteBtn);
+                
+                const boxImg = document.createElement('img');
+                boxImg.classList.add('boxImg');
+                boxImg.src = './src/assets/img/badge_gold.webp';
+                boxImg.alt = '';
+                
+                const boxStats = document.createElement('div');
+                boxStats.classList.add('absolute', 'top-0', 'boxStats');
+                
+                const flex1 = document.createElement('div');
+                flex1.classList.add('flex');
+                
+                const flexColumn = document.createElement('div');
+                flexColumn.classList.add('flex', 'flex-col', 'font-bold', 'justify-center', 'items-center');
+                
+                const positionText = document.createElement('span');
+                const positionSpan = document.createElement('span');
+                positionSpan.classList.add('font-medium');
+                positionSpan.textContent = positionValue;
+                
+                const flagImg = document.createElement('img');
+                flagImg.classList.add('w-[30px]');
+                flagImg.src = 'https://cdn.sofifa.net/flags/br.png';
+                flagImg.alt = '';
+                
+                const teamImg = document.createElement('img');
+                teamImg.classList.add('w-[30px]');
+                teamImg.src = 'https://cdn.sofifa.net/meta/team/3468/120.png';
+                teamImg.alt = '';
+                
+                flexColumn.appendChild(positionText);
+                flexColumn.appendChild(positionSpan);
+                flexColumn.appendChild(flagImg);
+                flexColumn.appendChild(teamImg);
+                
+                const playerImg = document.createElement('img');
+                playerImg.classList.add('w-[76px]');
+                playerImg.src = 'https://cdn.sofifa.net/players/238/794/25_120.png';
+                playerImg.alt = '';
+                
+                flex1.appendChild(flexColumn);
+                flex1.appendChild(playerImg);
+                
+                const flex2 = document.createElement('div');
+                flex2.classList.add('flex', 'flex-col', 'justify-center', 'items-center', 'w-full');
+                
+                const playerName = document.createElement('h4');
+                playerName.classList.add('font-bold');
+                playerName.textContent = nameInput.value;
+                
+                const statContainer = document.createElement('div');
+                statContainer.classList.add('flex', 'w-full', 'flex', 'justify-around');
+                
+                const statColumn1 = document.createElement('div');
+                statColumn1.classList.add('flex', 'flex-col');
+                
+                const statColumn2 = document.createElement('div');
+                statColumn2.classList.add('flex', 'flex-col');
+                
+                 const statBox1 = document.createElement('div');
+                statBox1.classList.add('flex', 'spanBox');
+                const statValue1 = document.createElement('span');
+                statValue1.textContent = paceInput.value;
+                statValue1.classList.add('test');
+
+                const statLabel1 = document.createElement('span');
+                statLabel1.textContent = 'PAC';
+                statBox1.appendChild(statValue1);
+                statBox1.appendChild(statLabel1);
+                
+                const statBox2 = document.createElement('div');
+                statBox2.classList.add('flex', 'spanBox');
+                const statValue2 = document.createElement('span');
+                statValue2.textContent = shootingInput.value;
+                const statLabel2 = document.createElement('span');
+                statLabel2.textContent = 'SHO';
+                statBox2.appendChild(statValue2);
+                statBox2.appendChild(statLabel2);
+                
+                const statBox3 = document.createElement('div');
+                statBox3.classList.add('flex', 'spanBox');
+                const statValue3 = document.createElement('span');
+                statValue3.textContent = passingInput.value;
+                const statLabel3 = document.createElement('span');
+                statLabel3.textContent = 'PAS';
+                statBox3.appendChild(statValue3);
+                statBox3.appendChild(statLabel3);
+                
+                const statBox4 = document.createElement('div');
+                statBox4.classList.add('flex', 'spanBox');
+                const statValue4 = document.createElement('span');
+                statValue4.textContent = dribblingInput.value;
+                const statLabel4 = document.createElement('span');
+                statLabel4.textContent = 'DRI';
+                statBox4.appendChild(statValue4);
+                statBox4.appendChild(statLabel4);
+                
+                const statBox5 = document.createElement('div');
+                statBox5.classList.add('flex', 'spanBox');
+                const statValue5 = document.createElement('span');
+                statValue5.textContent = clubInput.value;
+                const statLabel5 = document.createElement('span');
+                statLabel5.textContent = 'CLUB';
+                statBox5.appendChild(statValue5);
+                statBox5.appendChild(statLabel5);
+                
+                const statBox6 = document.createElement('div');
+                statBox6.classList.add('flex', 'spanBox');
+                const statValue6 = document.createElement('span');
+                statValue6.textContent = defendingInput.value;
+                const statLabel6 = document.createElement('span');
+                statLabel6.textContent = 'DEF';
+                statBox6.appendChild(statValue6);
+                statBox6.appendChild(statLabel6);
+                
+                const statBox7 = document.createElement('div');
+                statBox7.classList.add('flex', 'spanBox');
+                const statValue7 = document.createElement('span');
+                statValue7.textContent = physicalInput.value;
+                const statLabel7 = document.createElement('span');
+                statLabel7.textContent = 'PHY';
+                statBox7.appendChild(statValue7);
+                statBox7.appendChild(statLabel7);
+                
+                const statBox8 = document.createElement('div');
+                statBox8.classList.add('flex', 'spanBox');
+                const statValue8 = document.createElement('span');
+                statValue8.textContent = paceInput.value;
+                const statLabel8 = document.createElement('span');
+                statLabel8.textContent = 'PAC';
+                statBox8.appendChild(statValue8);
+                statBox8.appendChild(statLabel8);
+                
+                statColumn1.appendChild(statBox1);
+                statColumn1.appendChild(statBox2);
+                statColumn1.appendChild(statBox3);
+                statColumn1.appendChild(statBox4);
+                
+                statColumn2.appendChild(statBox5);
+                statColumn2.appendChild(statBox6);
+                statColumn2.appendChild(statBox7);
+                statColumn2.appendChild(statBox8);
+                
+                statContainer.appendChild(statColumn1);
+                statContainer.appendChild(statColumn2);
+                
+                flex2.appendChild(playerName);
+                flex2.appendChild(statContainer);
+                
+                boxStats.appendChild(flex1);
+                boxStats.appendChild(flex2);
+                
+                const position = document.createElement('div');
+                position.classList.add('rounded-[60%]', 'positionCss');
+                position.textContent = positionInput.value;
+                
+                box.appendChild(btnCss);
+                box.appendChild(boxImg);
+                box.appendChild(boxStats);
+                box.appendChild(position);
+                
+                boxCheck.appendChild(box)
                     return console.log("empty");
              
              
