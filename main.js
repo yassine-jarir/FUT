@@ -1,4 +1,4 @@
-let playerAtrr = []
+let playerAtrr = null
 
 const butnSubmit = document.querySelector(".SubmitBtn")
   const singleBox = document.querySelector(".box")
@@ -255,8 +255,6 @@ const gktest = Array.from(boxs).filter((item,i) => {
     
      console.log(arr)
     }
-   
-
 ) 
  
 
@@ -307,6 +305,7 @@ console.log("playerAtrr",playerAtrr)
 
         //  SubmitBtn.style
         butnSubmit.textContent = "modifier le joueur"
+        
 
   }else{
     console.log("update err")
