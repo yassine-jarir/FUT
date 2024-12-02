@@ -6,17 +6,26 @@
     <title>uteame</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css">
+ 
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+
+<style>
+     .notie-container {
+      box-shadow: none;
+    }
+  </style>
+  
 </head>
 <body class="imgMain flex justify-center items-center ">
     <div class="overlay"></div>
 
-    <div style="background: rgb(39 44 48 / 91%); box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 16px;" class="p-[2rem] flex h-     [700px] w-[95vw] flex m-auto  gap-6 justify-center items-center rounded-[13px] border-2 border-[#29a682] flex-col my-[6rem]">
+    <div class="p-[2rem] flex  containers  w-[95vw] flex m-auto  gap-6 justify-center items-center flex-col xl:rounded-[13px] xl:border-2 xl:border-[#29a682] my-[6rem]">
     
-        <div class="flex gap-[4rem]">
+        <div class="flex gap-[4rem] flex-col xl:flex-row">
 
  
-        <form class="max-w-md mx-auto flex flex-col justify-center items-center ">          
+        <form class="w-[400px] xl:w-auto max-w-md mx-auto flex flex-col justify-center items-center ">          
             <!-- Name -->
             <div class="relative z-0 w-full mb-5 group">
                 <input type="text" name="name" class="nameInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer"placeholder=""    required />
@@ -55,7 +64,7 @@
             </div>
         
             <!-- Stats Section -->
-            <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="grid md:grid-cols-2 md:gap-6 w-full">
                 <!-- Pace and Shooting -->
  
                 <div class="relative z-0 w-full mb-5 group">
@@ -68,7 +77,7 @@
                 </div>
             </div>
         
-            <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="grid md:grid-cols-2 md:gap-6 w-full">
                 <!-- Passing -->
                 <div class="relative z-0 w-full mb-5 group">
                     <input type="number" name="passing" class="passingInput block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#29a682] peer" placeholder="" required  required min="20" max="100"  />
@@ -112,7 +121,7 @@
         </form>
     
  
-        <div class="relative w-[75vw] height: 880px; flex justify-center">
+        <div class="relative h-[140vh] xl:w-[75vw] xl:height: 880px; flex justify-center">
             <img class="height: 980px; w-full h-[98%] rounded-[13px] border-2 border-[#29a682]" src="./src/assets/img/stadium_background.webp"/>
             <div class="playerCard absolute top-0 flex justify-center items-center flex-col w-[90%] ">
                 <div class="flex gap-[2rem]">
@@ -124,7 +133,7 @@
                                 <span class="test"></span>
                                 <div class="flex justify-center items-center">
 
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -140,7 +149,7 @@
                                 <span class="test"></span>
                                 <div class="flex justify-center items-center">
 
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -161,7 +170,7 @@
                             
                                 <div class="flex justify-center items-center">
 
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -178,7 +187,7 @@
                             
                                 <div class="flex justify-center items-center">
 
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px iconNoPlayer]" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -195,7 +204,7 @@
                             
                                 <div class="flex justify-center items-center">
 
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -212,7 +221,7 @@
                                 <span class="test"></span>
                                 <div class="flex justify-center items-center">
                                     
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -231,7 +240,7 @@
                                 <span class="test"></span>
                                 <div class="flex justify-center items-center">
 
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -247,7 +256,7 @@
                             
                                 <div class="flex justify-center items-center">
 
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -263,7 +272,7 @@
                                 <span class="test"></span>
                                 <div class="flex justify-center items-center">
 
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -278,7 +287,7 @@
                                 <span class="test"></span>
 
                                 <div class="flex justify-center items-center">
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                             </div>
 
@@ -295,7 +304,7 @@
                             <div class="flex">
                                 <span class="test"></span>
                                 <div class="flex justify-center items-center">
-                                   <img class="w-[135px]" src="./src/assets/img/unknown.png" alt="">
+                                   <img class="w-[135px] iconNoPlayer" src="./src/assets/img/unknown.png" alt="">
                                  </div>
                                  
                                 </div>
@@ -331,7 +340,9 @@
         </div>
         
      </div>
-      
+
+      <script src="https://unpkg.com/notie"></script>
+
      <script src="./main.js"></script>
 </body>
 </html>
