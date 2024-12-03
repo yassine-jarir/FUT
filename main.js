@@ -88,7 +88,7 @@ console.log(arr)
                        
                        const playerImg = document.createElement('img');
                        playerImg.classList.add('w-[76px]');
-                       playerImg.src = 'https://cdn.sofifa.net/players/238/794/25_120.png';
+                       playerImg.src = arr[i].imageInput;
                        playerImg.alt = '';
                        
                        flex1.appendChild(flexColumn);
@@ -272,7 +272,7 @@ console.log(arr)
                         
                         const playerImg = document.createElement('img');
                         playerImg.classList.add('w-[76px]');
-                        playerImg.src = 'https://cdn.sofifa.net/players/238/794/25_120.png';
+                        playerImg.src = arr[i].imageInput;
                         playerImg.alt = '';
                         
                         flex1.appendChild(flexColumn);
@@ -297,7 +297,7 @@ console.log(arr)
                          const statBox1 = document.createElement('div');
                         statBox1.classList.add('flex', 'spanBox');
                         const statValue1 = document.createElement('span');
-                        statValue1.textContent = paceInput.value;
+                        statValue1.textContent = arr[i].paceInput;
                         statValue1.classList.add('test');
         
                         const statLabel1 = document.createElement('span');
@@ -438,9 +438,7 @@ console.log(arr)
                 const box = document.createElement('div');
                 box.classList.add('box');
 
-                box.setAttribute('draggable', "true");
-                box.setAttribute('playerId', );
-                
+           
                 const btnCss = document.createElement('div');
                 btnCss.classList.add('btnCss', 'hidden');
                 
@@ -491,8 +489,8 @@ console.log(arr)
                 
                 const playerImg = document.createElement('img');
                 playerImg.classList.add('w-[76px]');
-                playerImg.src = 'https://cdn.sofifa.net/players/238/794/25_120.png';
-                playerImg.alt = '';
+                playerImg.src = imageInput.value;
+                playerImg.alt = 'player image';
                 
                 flex1.appendChild(flexColumn);
                 flex1.appendChild(playerImg);
@@ -689,7 +687,7 @@ console.log(arr)
                 
                 const playerImg = document.createElement('img');
                 playerImg.classList.add('w-[76px]');
-                playerImg.src = 'https://cdn.sofifa.net/players/238/794/25_120.png';
+                playerImg.src =  imageInput.value;
                 playerImg.alt = '';
                 
                 flex1.appendChild(flexColumn);
@@ -889,7 +887,7 @@ butnSubmit.addEventListener("click", (e) => {
                 
                 const playerImg = document.createElement('img');
                 playerImg.classList.add('w-[76px]');
-                playerImg.src = 'https://cdn.sofifa.net/players/238/794/25_120.png';
+                playerImg.src = imageInput.value;
                 playerImg.alt = '';
                 
                 flex1.appendChild(flexColumn);
@@ -1425,15 +1423,8 @@ function regexCheck(){
     }
 }
 
-// drag and drop 
-const formationPlayers = document.getElementById("formationPlayers");
-const replacementPlayers = document.getElementById("replacementPlayers");
+ 
 
-function dragStart(event) {
-    const playerId = event.target.getAttribute("data-player");
-    event.dataTransfer.setData("playerId", playerId);
-  }
-
-
+ 
 
  
