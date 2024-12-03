@@ -124,6 +124,7 @@ console.log(arr)
                        const statBox2 = document.createElement('div');
                        statBox2.classList.add('flex', 'spanBox');
                        const statValue2 = document.createElement('span');
+                    //    statValue2 = document.classList.add("rates")
                        statValue2.textContent = arr[i].shootingInput;
                        const statLabel2 = document.createElement('span');
                        statLabel2.textContent = 'SHO';
@@ -1425,6 +1426,20 @@ function regexCheck(){
 
  
 
- 
+function moy() {
+    let sum  = 0;
+    let moyenne = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].game == "bsasic" && arr[i].shootingInput != "") {
+            console.log( arr[i].shootingInput) 
+            sum += parseInt(arr[i].shootingInput)
+        }
+        
+    }
+    moyenne = sum / 11
+    console.log(moyenne)
+}
 
  
+
+ moy()
